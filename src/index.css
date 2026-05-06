@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-bg: #FDFDFD;
+  --color-text: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text font-sans antialiased overflow-hidden;
+  }
+}
+
+/* Custom progress bar transition */
+.progress-bar-transition {
+  transition: width 16ms linear;
+}
+
+/* Custom Range Input (Slider) styling */
+input[type="range"] {
+  @apply appearance-none bg-transparent w-full cursor-pointer outline-none transition-opacity;
+}
+
+/* Webkit (Chrome, Safari, Edge) */
+input[type="range"]::-webkit-slider-runnable-track {
+  @apply w-full h-1 bg-text/10 rounded-none border-none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  @apply appearance-none w-6 h-6 bg-text border-2 border-text rounded-full shadow-sm relative;
+  margin-top: -10px; /* Aligns thumb with the 4px track: (TrackHeight/2) - (ThumbHeight/2) -> (4/2) - (24/2) = -10 */
+  transition: transform 0.1s ease-out;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  @apply scale-90;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-track {
+  @apply w-full h-1 bg-text/10 rounded-none border-none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  @apply w-6 h-6 bg-text border-2 border-text rounded-full shadow-sm;
+  transition: transform 0.1s ease-out;
+}
+
+input[type="range"]:active::-moz-range-thumb {
+  @apply scale-90;
+}
