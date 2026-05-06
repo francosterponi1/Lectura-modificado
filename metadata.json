@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Palabra Al Azar-FS para modificar",
+  "description": "Edición Minimalista para Niños - Generador de palabras aleatorias con temporizador dinámico.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": []
+}
